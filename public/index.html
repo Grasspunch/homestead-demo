@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homestead Shop — Contact us</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; color: #263b2b; background: #f6f3eb; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    header, main, footer { max-width: 760px; margin: auto; padding: 24px; }
+    header { font-weight: 700; border-bottom: 1px solid #d3d9cc; }
+    h1 { font-size: clamp(2rem, 6vw, 3rem); margin-bottom: 12px; }
+    p { line-height: 1.6; }
+    section { margin-top: 32px; padding: 28px; background: #fff; border: 1px solid #d3d9cc; border-radius: 12px; }
+    h2 { margin-top: 0; }
+    label { display: block; font-weight: 600; margin-top: 20px; }
+    input, textarea { display: block; width: 100%; margin-top: 8px; padding: 12px; border: 1px solid #6c7a6d; border-radius: 6px; font: inherit; color: inherit; background: #fff; }
+    textarea { resize: vertical; min-height: 150px; }
+    button { margin-top: 24px; padding: 12px 22px; border: 0; border-radius: 6px; background: #285a38; color: #fff; font: inherit; font-weight: 600; cursor: pointer; }
+    button:disabled { opacity: .65; cursor: wait; }
+    :focus-visible { outline: 3px solid #ad6d00; outline-offset: 3px; }
+    .hint, footer { font-size: .9rem; color: #526454; }
+    #feedback { margin-bottom: 0; }
+    #feedback[data-state="success"] { padding: 12px; color: #174425; background: #e7f4e9; border-left: 4px solid #285a38; }
+    #feedback[data-state="error"] { padding: 12px; color: #842424; background: #fff0ef; border-left: 4px solid #a72b2b; }
+    @media (max-width: 480px) { section { padding: 20px; } }
+  </style>
+  <script src="/contact.js" defer></script>
+</head>
+<body>
+  <header>Homestead Shop</header>
+  <main>
+    <h1>Welcome to our shop</h1>
+    <p>Have a question or something to share? Send a note directly to the shop owner.</p>
+    <section aria-labelledby="contact-heading">
+      <h2 id="contact-heading">Get in touch</h2>
+      <p class="hint" id="form-hint">All fields are required. Your details will be emailed to the shop owner so they can reply.</p>
+      <noscript><p>Please enable JavaScript to send this form.</p></noscript>
+      <form id="contact-form" aria-describedby="form-hint">
+        <label for="name">Name</label>
+        <input id="name" name="name" autocomplete="name" maxlength="100" required>
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" maxlength="254" required>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" maxlength="5000" rows="6" required></textarea>
+        <button id="send-button" type="submit" disabled>Send message</button>
+        <p id="feedback" role="status" aria-live="polite" aria-atomic="true" tabindex="-1"></p>
+      </form>
+    </section>
+  </main>
+  <footer>Thanks for stopping by.</footer>
+</body>
+</html>
